@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block title %} Home {% endblock %} {% block content %}
+<style>
+    .btn-primary {
+        background-color: #C9007A;
+        border: 0px solid black;
+        color: #A5EF00
+    }
+</style>
+
+<h1 align="center"> Notes </h1>
+<!--shows added notes-->
+<ul class="list-group list-group-flush" id="notes">
+    {% for note in user.notes %}
+    <!--passes user / notes from models -->
+    <li class="list-group-item">{{ note.data }}
+        <!--how to delete notes -->
+        <!--deleteNote is a function in json file -->
+        <button type="button" class="close" onClick="deleteNote ({{ note.id }})">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </li>
+    {% endfor %}
+</ul>
+<!--shows text are and Add Note button-->
+<form method='POST'>
+    <br />
+    <textarea name="note" id="note" class="form-control"></textarea>
+    <br />
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Add Note</button>
+    </div>
+</form>
+{% endblock %}
