@@ -1,10 +1,17 @@
 {% extends "base.html" %} {% block title %} Login {% endblock %}
-
 {% block content %}
-<form method="POST">
-    <h3 align="center">Login</h3>
+<style>
+    .btn-primary {
+        background-color: #C9007A;
+        border: 0px solid black;
+        color: #A5EF00
+    }
+</style>
 
-    <div class ='form-group'>  <!--form-group is from bootstrap-->
+<form method="POST">
+    <h3 align="left">Login</h3>
+
+    <div class ='form-group col-lg-3'>  <!--form-group is from bootstrap-->
         <label for="email">Email Address</label>
         <input type="email"
                class="form-control"
@@ -13,7 +20,7 @@
                placeholder="Enter email"/>
     </div>
 
-    <div class ='form-group'>  <!--form-group is from bootstrap-->
+    <div class ='form-group col-lg-3'>  <!--form-group is from bootstrap-->
         <label for="password">Password</label>
         <input type="password"
                class="form-control"
@@ -21,7 +28,7 @@
                name="password"
                placeholder="Enter password"/>
     </div>
-
+    </br>
     <button type ='login' class ="btn btn-primary">Login</button>
 </form>
 {% endblock %}
